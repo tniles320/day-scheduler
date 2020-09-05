@@ -10,91 +10,68 @@
 </head>
 <body>
 
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">
+              Work Day Scheduler
+          </h1>
+
+          <p class="day" id="day-display"></p>
+
+          <p class="instructions">
+              Click into desired time slot to add text<br>
+              Press enter to save your input<br>
+              Click the check button when tasks are completed<br>
+              (Completed tasks will be erased when page is reloaded)
+          </p>
+        </div>
+      </div>
+
     <ul class="list-group">
-        <li class="list-group-item" id="0" value="6">
-            <div class="time-slot">6 AM</div>
-            <input type="text" id="input-0" name="6am">
-            <button class="check-button" id="btn-0">✓</button>
-        </li>
-        <li class="list-group-item" id="1" value="7">
-            <div class="time-slot">7 AM</div>
-            <input type="text" id="input-1" name="7am">
-            <button class="check-button" id="btn-1">✓</button>
-        </li>
-        <li class="list-group-item" id="2" value="8">
-            <div class="time-slot">8 AM</div>
-            <input type="text" id="input-2" name="8am">
-            <button class="check-button" id="btn-2">✓</button>
-        </li>
-        <li class="list-group-item" id="3" value="9">
+        <li class="list-group-item" id="0" value="9">
             <div class="time-slot">9 AM</div>
-            <input type="text" id="input-3" name="9am">
-            <button class="check-button" id="btn-3">✓</button>
+            <input type="text" id="input-0" name="9am" class="form first">
+            <button class="check-button" id="btn-0" name="first" value="9am">✓</button>
         </li>
-        <li class="list-group-item" id="4" value="10">
+        <li class="list-group-item" id="1" value="10">
             <div class="time-slot">10 AM</div>
-            <input type="text" id="input-4" name="10am">
-            <button class="check-button" id="btn-4">✓</button>
+            <input type="text" id="input-1" name="10am" class="form second">
+            <button class="check-button" id="btn-1" name="second" value="10am">✓</button>
         </li>
-        <li class="list-group-item" id="5" value="11">
+        <li class="list-group-item" id="2" value="11">
             <div class="time-slot">11 AM</div>
-            <input type="text" id="input-5" name="11am">
-            <button class="check-button" id="btn-5">✓</button>
+            <input type="text" id="input-2" name="11am" class="form third">
+            <button class="check-button" id="btn-2" name="third" value="11am">✓</button>
         </li>
-        <li class="list-group-item" id="6" value="12">
+        <li class="list-group-item" id="3" value="12">
             <div class="time-slot">12 PM</div>
-            <input type="text" id="input-6" name="12pm">
-            <button class="check-button" id="btn-6">✓</button>
+            <input type="text" id="input-3" name="12pm" class="form fourth">
+            <button class="check-button" id="btn-3"name="fourth" value="12pm">✓</button>
         </li>
-        <li class="list-group-item" id="7" value="13">
+        <li class="list-group-item" id="4" value="13">
             <div class="time-slot">1 PM</div>
-            <input type="text" id="input-7" name="1pm">
-            <button class="check-button" id="btn-7">✓</button>
+            <input type="text" id="input-4" name="1pm" class="form fifth">
+            <button class="check-button" id="btn-4" name="fifth" value="1pm">✓</button>
         </li>
-        <li class="list-group-item" id="8" value="14">
+        <li class="list-group-item" id="5" value="14">
             <div class="time-slot">2 PM</div>
-            <input type="text" id="input-8" name="2pm">
-            <button class="check-button" id="btn-8">✓</button>
+            <input type="text" id="input-5" name="2pm" class="form sixth">
+            <button class="check-button" id="btn-5" name="sixth" value="2pm">✓</button>
         </li>
-        <li class="list-group-item" id="9" value="15">
+        <li class="list-group-item" id="6" value="15">
             <div class="time-slot">3 PM</div>
-            <input type="text" id="input-9" name="3pm">
-            <button class="check-button" id="btn-9">✓</button>
+            <input type="text" id="input-6" name="3pm" class="form seventh">
+            <button class="check-button" id="btn-6" name="seventh" value="3pm">✓</button>
         </li>
-        <li class="list-group-item" id="10" value="16">
+        <li class="list-group-item" id="7" value="16">
             <div class="time-slot">4 PM</div>
-            <input type="text" id="input-10" name="4pm">
-            <button class="check-button" id="btn-10">✓</button>
+            <input type="text" id="input-7" name="4pm" class="form eighth">
+            <button class="check-button" id="btn-7" name="eighth" value="4pm">✓</button>
         </li>
-        <li class="list-group-item" id="11" value="17">
+        <li class="list-group-item" id="8" value="17">
             <div class="time-slot">5 PM</div>
-            <input type="text" id="input-11" name="5pm">
-            <button class="check-button" id="btn-11">✓</button>
-        </li>
-        <li class="list-group-item" id="12" value="18">
-            <div class="time-slot">6 PM</div>
-            <input type="text" id="input-12" name="6pm">
-            <button class="check-button" id="btn-12">✓</button>
-        </li>
-        <li class="list-group-item" id="13" value="19">
-            <div class="time-slot">7 PM</div>
-            <input type="text" id="input-13" name="7pm">
-            <button class="check-button" id="btn-13">✓</button>
-        </li>
-        <li class="list-group-item" id="14" value="20">
-            <div class="time-slot">8 PM</div>
-            <input type="text" id="input-14" name="8pm">
-            <button class="check-button" id="btn-14">✓</button>
-        </li>
-        <li class="list-group-item" id="15" value="21">
-            <div class="time-slot">9 PM</div>
-            <input type="text" id="input-15" name="9pm">
-            <button class="check-button" id="btn-15">✓</button>
-        </li>
-        <li class="list-group-item" id="16" value="22">
-            <div class="time-slot">10 PM</div>
-            <input type="text" id="input-16" name="10pm">
-            <button class="check-button" id="btn-16">✓</button>
+            <input type="text" id="input-8" name="5pm" class="form ninth">
+            <button class="check-button" id="btn-8" name="ninth" value="5pm">✓</button>
         </li>
     </ul>
 
@@ -102,11 +79,30 @@
 
     <style>
 
+        .jumbotron {
+            background-color: white;
+            text-align: center;
+            margin-bottom: 5px;
+            padding-bottom: 5px;
+            width: 100%;
+        }
+
+        .day {
+            font-weight: bold;
+            margin: 40px 0 0 0;
+        }
+
+        .instructions {
+            font-size: 12px;
+            line-height: 1;
+            margin-top: 50px;
+            margin-bottom: 0;
+        }
+
         .list-group {
-            display: flex;
-            justify-content: center;
+            display: block;
             height: 1200px;
-            width: 80%;
+            width: 70%;
             margin: auto;
         }
 
@@ -129,6 +125,7 @@
             overflow:auto;
             width: 60%;
             margin: auto;
+            text-align: center;
         }
 
         .check-button {
@@ -136,6 +133,8 @@
             width: 60px;
             border-radius: 10px;
             background-color: teal;
+            font-size: 36px;
+            font-weight: bold;
         }
 
         .past {
@@ -152,7 +151,15 @@
 
         .complete {
             text-decoration: line-through;
-            text-decoration-color: red;
+            text-decoration-color: rgb(253, 92, 92);
+            font-style: italic;
+            color: rgb(73, 68, 68);
+        }
+
+        @media only screen and (max-width: 600px) {
+            .list-group {
+                width: 100%;
+            }
         }
 
     </style>
@@ -163,14 +170,31 @@
         var list = $(".list-group-item");
         var currentTime = moment().format("HH");
         var checkButton = $(".check-button");
+        var inputForm = $(".form");
+        var dayDisplay = moment().format("MMMM Do YYYY");
+
+        $("#day-display").text(dayDisplay);
+
+        for(var i = 0; i < list.length; i++) {
+            if($(".list-group-item")[i].value > parseInt(currentTime)) {
+                $("#" + i).addClass("future");
+                $("#input-" + i).addClass("future");
+            } else if($(".list-group-item")[i].value === parseInt(currentTime)) {
+                $("#" + i).addClass("present");
+                $("#input-" + i).addClass("present");
+            } else {
+                $("#" + i).addClass("past");
+                $("#input-" + i).addClass("past");
+            }
+        } 
 
         function getLocalInput() {
             for(var j = 0; j < list.length; j++) {
                 var inputElement = $("#input-" + j)
                 var localText = localStorage.getItem(inputElement[0].name);
 
-                $('input[type="text"]').each(function(){    
-                    var localValue = $(this).attr('name');
+                inputForm.each(function(){    
+                    var localValue = $(this).attr("name");
                     var localText = localStorage.getItem(localValue);
                     $(this).val(localText);
                 }); 
@@ -180,38 +204,28 @@
         getLocalInput();
 
 
-        $('input[type="text]"').on('keyup', function(event){
+        inputForm.on("keyup", function(event){
             if(event.keyCode === 13) {
-                event.preventDefault();
-                $('input[type="text"]').each(function(){    
-                    var inputValue = $(this).attr('name');
-                    var inputText = $(this).val();
-                    localStorage.setItem(inputValue, inputText);
-                    getLocalInput();
-                });  
+                event.preventDefault(); 
+                var inputValue = $(this).attr("name");
+                var inputText = $(this).val();
+                localStorage.setItem(inputValue, inputText);
+                getLocalInput();
+                var newInput = $(this).attr("id");
+                $("#" + newInput).removeClass("complete");
             } 
         }); 
 
 
-        for(var i = 0; i < list.length; i++) {
-
-            if($(".list-group-item")[i].value > parseInt(currentTime)) {
-              $("#" + i).addClass("future");
-              $("#input-" + i).addClass("future");
-          } else if($(".list-group-item")[i].value === parseInt(currentTime)) {
-              $("#" + i).addClass("present");
-              $("#input-" + i).addClass("present");
-          } else {
-              $("#" + i).addClass("past");
-              $("#input-" + i).addClass("past");
-          }
-        } 
-
         checkButton.on("click", function(event) {
             event.preventDefault();
-            // .addClass("complete");
+            var buttonClicked = $(this).attr("name");
+            $("." + buttonClicked).addClass("complete");
 
-        })
+            var removeValue = $(this).attr("value");
+            var removeText = " ";
+            localStorage.setItem(removeValue, removeText);
+        });
 
         
 
