@@ -9,13 +9,14 @@
     <title>Day Scheduler</title>
 </head>
 <body>
-
+    <!-- contains content at top of page -->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4">
               Work Day Scheduler
           </h1>
 
+          <!-- displays current day -->
           <p class="day" id="day-display"></p>
 
           <p class="instructions">
@@ -27,16 +28,29 @@
         </div>
       </div>
 
+    <!-- contains list of input forms -->
     <ul class="list-group">
+        <!-- contains single input form -->
         <li class="list-group-item" id="0" value="9">
-            <div class="time-slot">9 AM</div>
+            <!-- time at left side of row -->
+            <div class="time-slot">
+                9 AM
+            </div>
+            <!-- text input form -->
             <input type="text" id="input-0" name="9am" class="form first">
-            <button class="check-button" id="btn-0" name="first" value="9am">✓</button>
+            <!-- button at right side of row -->
+            <button class="check-button" id="btn-0" name="first" value="9am">
+                ✓
+            </button>
         </li>
         <li class="list-group-item" id="1" value="10">
-            <div class="time-slot">10 AM</div>
+            <div class="time-slot">
+                10 AM
+            </div>
             <input type="text" id="input-1" name="10am" class="form second">
-            <button class="check-button" id="btn-1" name="second" value="10am">✓</button>
+            <button class="check-button" id="btn-1" name="second" value="10am">
+                ✓
+            </button>
         </li>
         <li class="list-group-item" id="2" value="11">
             <div class="time-slot">11 AM</div>
@@ -75,10 +89,9 @@
         </li>
     </ul>
 
-    <div id="time"></div>
-
     <style>
 
+        /* centers text and matches background with rest of page */
         .jumbotron {
             background-color: white;
             text-align: center;
@@ -87,11 +100,13 @@
             width: 100%;
         }
 
+        /* changes font weight and margin of current day */
         .day {
             font-weight: bold;
             margin: 40px 0 0 0;
         }
 
+        /* changes font size and margin of instructions */
         .instructions {
             font-size: 12px;
             line-height: 1;
@@ -99,6 +114,7 @@
             margin-bottom: 0;
         }
 
+        /* sets height and width of scheduler */
         .list-group {
             display: block;
             height: 1200px;
@@ -106,12 +122,14 @@
             margin: auto;
         }
 
+        /* sets content position in each form */
         .list-group-item {
             padding: 0;
             display: flex;
             justify-content: space-between;
         }
 
+        /* changes time text on left side of each row */
         .time-slot {
             font-weight: bold;
             font-size: 15px;
@@ -120,6 +138,7 @@
             margin-left: 5px;
         }
 
+        /* sets size and position of input form in center of each row */
         input {
             border: 0;
             overflow:auto;
@@ -128,6 +147,7 @@
             text-align: center;
         }
 
+        /* changes size and background color of button on right side of rows */
         .check-button {
             height: 60px;
             width: 60px;
@@ -137,6 +157,7 @@
             font-weight: bold;
         }
 
+        /* rows change color based off of what class is assigned to them */
         .past {
             background-color: lightgray;
         }
@@ -149,6 +170,7 @@
             background-color: rgb(141, 141, 247);
         }
 
+        /* puts a line through text that is assigned this class */
         .complete {
             text-decoration: line-through;
             text-decoration-color: rgb(253, 92, 92);
@@ -156,6 +178,7 @@
             color: rgb(73, 68, 68);
         }
 
+        /* changes scheduler to adjust size on smaller screens */
         @media only screen and (max-width: 600px) {
             .list-group {
                 width: 100%;
@@ -168,34 +191,46 @@
     <script>
 
         var list = $(".list-group-item");
+        // pulls time from moment.js
         var currentTime = moment().format("HH");
         var checkButton = $(".check-button");
         var inputForm = $(".form");
         var dayDisplay = moment().format("MMMM Do YYYY");
 
+        // sets text to show current day
         $("#day-display").text(dayDisplay);
 
+        // loops through each list element to change the class based off of the current time
         for(var i = 0; i < list.length; i++) {
+            // changes the class of the row and input form if current time is earlier than the rows assigned time
             if($(".list-group-item")[i].value > parseInt(currentTime)) {
                 $("#" + i).addClass("future");
                 $("#input-" + i).addClass("future");
+            // changes the class of the row and input form if current time is the same as the rows assigned time
             } else if($(".list-group-item")[i].value === parseInt(currentTime)) {
                 $("#" + i).addClass("present");
                 $("#input-" + i).addClass("present");
+            // changes the class of the row and input form if current time is later than the rows assigned time
             } else {
                 $("#" + i).addClass("past");
                 $("#input-" + i).addClass("past");
             }
         } 
 
+        // gets scheduler input from local storage
         function getLocalInput() {
+            // loops through each element
             for(var j = 0; j < list.length; j++) {
-                var inputElement = $("#input-" + j)
+                var inputElement = $("#input-" + j);
+                // assigns variable to name of each input element
                 var localText = localStorage.getItem(inputElement[0].name);
-
-                inputForm.each(function(){    
+                // loops through each input, assigning its name to a variable that is used to display text from local storage
+                inputForm.each(function(){   
+                    //  assigns variable to name of element
                     var localValue = $(this).attr("name");
+                    // retrieves value from local storage based off of element name
                     var localText = localStorage.getItem(localValue);
+                    // displays text in each input form
                     $(this).val(localText);
                 }); 
             }
@@ -204,24 +239,34 @@
         getLocalInput();
 
 
+        // saves user input to local storage when enter is pressed
         inputForm.on("keyup", function(event){
             if(event.keyCode === 13) {
                 event.preventDefault(); 
+                // assigns variable to name input form that user presses enter in
                 var inputValue = $(this).attr("name");
+                // assigns variable to text input after user presses enter
                 var inputText = $(this).val();
+                // stores info in local storage
                 localStorage.setItem(inputValue, inputText);
+                // calls function to display stored info without having to refresh page
                 getLocalInput();
+                // assigns variable to id of input form that user presses enter in
                 var newInput = $(this).attr("id");
+                // removes class "complete" when enter is pressed
                 $("#" + newInput).removeClass("complete");
             } 
         }); 
 
 
+        // when check button is clicked
         checkButton.on("click", function(event) {
             event.preventDefault();
+            // sets variable that is name of button that is clicked
             var buttonClicked = $(this).attr("name");
+            // adds class "complete" to input element that matches its class name to the buttons name
             $("." + buttonClicked).addClass("complete");
-
+            // removes local storage content so input form is cleared when page is reloaded
             var removeValue = $(this).attr("value");
             var removeText = " ";
             localStorage.setItem(removeValue, removeText);
